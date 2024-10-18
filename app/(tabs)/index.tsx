@@ -5,7 +5,7 @@ import { Text } from 'react-native';
 export default function HomeScreen() {
   return (
     <>
-      <Text>Turma mara</Text>
+      <Text>Index das Ta?s</Text>
     </>
   );
 }

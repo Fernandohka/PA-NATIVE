@@ -23,6 +23,7 @@ const style = StyleSheet.create({
     TemQueSerNoText: {
         color: "#ffffff",
         fontWeight: "bold",
-        fontSize: 30
+        fontSize: 30,
+        fontFamily: "Inter"
     }
 })
