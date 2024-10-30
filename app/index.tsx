@@ -23,7 +23,12 @@ export default function Login(){
         signInWithEmailAndPassword(auth, email, pass)
         .then((dadosUsuario) => {
             console.log(dadosUsuario);
-            router.push('/(tabs)')
+            if (email == "admin@adm.adm" && pass == "adm1234") {
+                router.push('/(tabs)')
+            }
+            else {
+                router.push('/(loja)')
+            }
         }).catch((err) => {
             alert(err.message);
         });
