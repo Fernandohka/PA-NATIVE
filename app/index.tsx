@@ -1,17 +1,32 @@
-import { useState } from "react";
-import { Text, View, TextInput, SafeAreaView, StyleSheet } from "react-native";
+import { useState, useEffect } from "react";
+import { Text, View, TextInput, SafeAreaView, StyleSheet, TouchableOpacity } from "react-native";
 import { Link, router } from "expo-router";
+import { FIREBASE_AUTH } from "@/firebaseConfig";
+import { signInWithEmailAndPassword } from "firebase/auth";
 
 
 export default function Login(){
     const [email, setEmail] = useState('')
     const [pass, setPass] = useState('')
 
-    console.log(email, pass)
-    console.log(typeof email, typeof pass)
+    const auth = FIREBASE_AUTH;
 
-    const onPress = () => {
-        router.push('/(tabs)')
+    useEffect(() => {
+        console.log(auth.currentUser)
+    }, [auth.currentUser]);
+
+    useEffect(() => {
+        console.log(email, pass)
+    }, [email, pass]);
+
+    const signIn = () => {
+        signInWithEmailAndPassword(auth, email, pass)
+        .then((dadosUsuario) => {
+            console.log(dadosUsuario);
+            router.push('/(tabs)')
+        }).catch((err) => {
+            alert(err.message);
+        });
     }
 
     return(
@@ -41,14 +56,16 @@ export default function Login(){
                             />
                     </View>
                     <View style={styles.loginButton}>
-                        <Link href={'/register'} style={styles.loginText} >
-                            Log in
-                        </Link>
+                        <TouchableOpacity  onPress={signIn}>
+                            <Text style={styles.loginText}>Log in</Text>
+                        </TouchableOpacity>
                     </View>
                     <View style={styles.containerAzul}>
                         <Text style={styles.textAzul}>Forgot password?</Text>
                         <Text>●</Text>
-                        <Text style={styles.textAzul}>Create an account</Text>
+                        <Link href={'/register'} style={styles.textAzul} >
+                            Create an account
+                        </Link>
                     </View>
                 </View>
             </SafeAreaView>
