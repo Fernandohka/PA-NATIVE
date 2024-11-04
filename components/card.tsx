@@ -1,25 +1,35 @@
 import { StyleSheet, Text, View } from "react-native"
+import { calculateNewMassToMatchDuration } from "react-native-reanimated/lib/typescript/reanimated2/animation/springUtils"
+import { blue } from "react-native-reanimated/lib/typescript/reanimated2/Colors"
+import { FullWindowOverlay } from "react-native-screens"
 
 interface ICard {
-    nome: String, 
+    nome: string, 
     valor: number, 
-    descricao: String, 
     estoque: number, 
     tamanho: number
 }
 
-export const Card = ({nome, valor, descricao, estoque, tamanho}: ICard) => {
+export const Card = ({nome, valor, estoque, tamanho}: ICard) => {
     return(
         <>
-            <Text>{nome}</Text>
-            <Text>{descricao}</Text>
-            <Text>{tamanho}</Text>
-            <Text>{valor}</Text>
-            <Text>{estoque}</Text>
+            <View style={styles.container}>
+                <Text>{nome}</Text>
+                <Text>Tamanho: {tamanho}</Text>
+                <Text>R${valor}</Text>
+                <Text>Estoque: {estoque}</Text>
+            </View>
         </>
     )
 }
 
-const style = StyleSheet.create({
-    
+const styles = StyleSheet.create({
+    container: {
+        borderRadius: 10,
+        borderWidth: 2,
+        margin: 10,
+        padding: 5,
+        alignItems: "center",
+        width: "45%"
+    }
 })

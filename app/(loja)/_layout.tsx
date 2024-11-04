@@ -10,12 +10,12 @@ export default function TabLayout() {
     <>
     <Header image={require("../../assets/images/react-logo.png")}></Header>
       <Tabs>
-        <Tabs.Screen name='Camisetas' options={{headerShown: false, tabBarIcon: () => (<Text>🐱‍👤</Text>)}}></Tabs.Screen>
-        <Tabs.Screen name='Blusas' options={{headerShown: false, tabBarIcon: () => (<Text>🐱‍🏍</Text>)}}></Tabs.Screen>
-        <Tabs.Screen name='Bermudas' options={{headerShown: false, tabBarIcon: () => (<Text>🐱‍🚀</Text>)}}></Tabs.Screen>
-        <Tabs.Screen name='Calças' options={{headerShown: false, tabBarIcon: () => (<Text>🐱‍👓</Text>)}}></Tabs.Screen>
-        <Tabs.Screen name='Jaquetas de couro' options={{headerShown: false, tabBarIcon: () => (<Text>🐱‍🐉</Text>)}}></Tabs.Screen>
-        <Tabs.Screen name='index' options={{headerShown: false, tabBarIcon: () => (<Text>🐱‍💻</Text>)}}></Tabs.Screen>
+        <Tabs.Screen name='Camisetas'         options={{headerShown: false, tabBarIcon: () => (<Text>👕</Text>), tabBarLabel: () => null}}></Tabs.Screen>
+        <Tabs.Screen name='Blusas'            options={{headerShown: false, tabBarIcon: () => (<Text>🧥</Text>), tabBarLabel: () => null}}></Tabs.Screen>
+        <Tabs.Screen name='Bermudas'          options={{headerShown: false, tabBarIcon: () => (<Text>🩳</Text>), tabBarLabel: () => null}}></Tabs.Screen>
+        <Tabs.Screen name='Calças'            options={{headerShown: false, tabBarIcon: () => (<Text>👖</Text>), tabBarLabel: () => null}}></Tabs.Screen>
+        <Tabs.Screen name='Jaquetas de couro' options={{headerShown: false, tabBarIcon: () => (<Text>💀</Text>), tabBarLabel: () => null}}></Tabs.Screen>
+        <Tabs.Screen name='index'             options={{headerShown: false, tabBarIcon: () => (<Text>🏠</Text>), tabBarLabel: () => null}}></Tabs.Screen>
       </Tabs>
     </>
   );

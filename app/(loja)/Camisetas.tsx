@@ -12,7 +12,7 @@ export default function Camisetas() {
 
   return (
     <>
-      <Card nome={'camiseta'} descricao={'É uma camiseta'} estoque={5} tamanho={52} valor={5999.99}></Card>
+      <Card nome={'camiseta'} estoque={5} tamanho={52} valor={5999.99}></Card>
     </>
   );
 }
